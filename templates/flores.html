@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block cuerpo %}
+    <div class="bg-white shadow-xl rounded-3xl border-t-8 border-pink-500 p-8">
+        <h1 class="text-3xl font-extrabold text-pink-500 mb-8">Registro de Flores</h1>
+
+        <form class="grid grid-cols-2 gap-x-6 gap-y-5">
+            <div class="col-span-2">
+                <label class="text-xs uppercase tracking-widest text-gray-500">Id</label>
+                <input type="text" name="id" class="w-full border-0 border-b-2 border-gray-300 focus:border-pink-300 outline-none py-1"
+                       value="{{ flor[0] if flor else '' }}">
+            </div>
+
+            <div>
+                <label class="text-xs uppercase tracking-widest text-gray-500">Nombre de la flor</label>
+                <input type="text" name="nombre_flor" class="w-full border-0 border-b-2 border-gray-300 focus:border-pink-200 outline-none py-1"
+                       value="{{ flor[1] if flor else '' }}">
+            </div>
+
+            <div>
+                <label class="text-xs uppercase tracking-widest text-gray-500">Color</label>
+                <input type="text" name="color" class="w-full border-0 border-b-2 border-gray-300 focus:border-pink-100 outline-none py-1"
+                       value="{{ flor[2] if flor else '' }}">
+            </div>
+
+            <div>
+                <label class="text-xs uppercase tracking-widest text-gray-500">Precio</label>
+                <input type="text" name="precio" class="w-full border-0 border-b-2 border-gray-300 focus:border-pink-300 outline-none py-1"
+                       value="{{ flor[3] if flor else '' }}">
+            </div>
+
+            <div>
+                <label class="text-xs uppercase tracking-widest text-gray-500">Stock</label>
+                <input type="text" name="stock" class="w-full border-0 border-b-2 border-gray-300 focus:border-pink-200 outline-none py-1"
+                       value="{{ flor[4] if flor else '' }}">
+            </div>
+
+            <div class="col-span-2 flex justify-center gap-3 mt-6">
+                <button type="submit" formaction="{{ url_for('guardar') }}" formmethod="POST"
+                        class="bg-green-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-yellow-100">Guardar</button>
+                <button type="submit" formaction="{{ url_for('modificar') }}" formmethod="POST"
+                        class="bg-purple-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-pink-100">Modificar</button>
+                <button type="submit" formaction="{{ url_for('eliminar') }}" formmethod="POST"
+                        class="bg-rose-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-100">Eliminar</button>
+                <button type="submit" formaction="{{ url_for('buscar') }}" formmethod="POST"
+                        class="bg-gray-700 text-white px-6 py-2 rounded-full font-semibold hover:bg-gray-300">Buscar</button>
+                <button type="button" onclick="window.open('/flores/pdf', '_blank')"
+                        class="bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-100">Generar PDF</button>        
+            </div>
+        </form>
+
+        {% if mensaje %}
+            <div class="mt-6 text-center text-sm font-medium text-pink-500 bg-pink-100 py-3 rounded-full">{{ mensaje }}</div>
+        {% endif %}
+    </div>
+{% endblock %}

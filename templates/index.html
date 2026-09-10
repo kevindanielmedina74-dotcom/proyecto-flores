@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% block cuerpo %}
+
+<!-- Conectar nuestro CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+
+
+<!-- CONTENEDOR PRINCIPAL -->
+<div class="pagina-inicio">
+
+    <!-- FLORES DECORATIVAS DE LA IZQUIERDA -->
+    <div class="flores-izquierda">
+        <span class="flor flor1">🌸</span>
+        <span class="flor flor2">🌷</span>
+        <span class="flor flor3">🌿</span>
+        <span class="flor flor4">🌸</span>
+    </div>
+
+
+    <!-- FLORES DECORATIVAS DE LA DERECHA -->
+    <div class="flores-derecha">
+        <span class="flor flor5">🌷</span>
+        <span class="flor flor6">🌸</span>
+        <span class="flor flor7">🌿</span>
+        <span class="flor flor8">🌷</span>
+    </div>
+
+
+    <!-- CONTENIDO CENTRAL -->
+    <div class="contenido-inicio">
+
+        <!-- DECORACIÓN SUPERIOR -->
+        <div class="decoracion-superior">
+
+            <span></span>
+
+            <span class="flor-centro">🌸</span>
+
+            <span></span>
+
+        </div>
+
+
+        <!-- TÍTULO -->
+        <h1 class="titulo-bienvenida">
+            🌸 Bienvenidos 🌸
+        </h1>
+
+
+        <!-- SUBTÍTULO -->
+        <h2 class="subtitulo">
+            A nuestra Florería
+        </h2>
+
+
+        <!-- FRASE -->
+        <p class="frase">
+            “Flores que transmiten emociones.”
+        </p>
+
+
+        <!-- DESCRIPCIÓN -->
+        <p class="descripcion-inicio">
+            En nuestra floristería encontrarás una gran variedad de flores
+            para cada ocasión. Aquí podrás registrar, modificar, eliminar
+            y buscar información de nuestras flores de manera fácil y rápida.
+        </p>
+
+
+        <!-- TARJETAS -->
+        <div class="tarjetas-inicio">
+
+
+            <!-- TARJETA 1 -->
+            <div class="tarjeta-inicio tarjeta-rosa">
+
+                <div class="icono-tarjeta">
+                    🌷
+                </div>
+
+                <h3>
+                    CONOCE NUESTRAS<br>
+                    FLORES
+                </h3>
+
+                <p>
+                    Descubre la variedad de flores
+                    y sus características.
+                </p>
+
+            </div>
+
+
+            <!-- TARJETA 2 -->
+            <div class="tarjeta-inicio tarjeta-verde">
+
+                <div class="icono-tarjeta">
+                    🌱
+                </div>
+
+                <h3>
+                    REGISTRA NUEVAS<br>
+                    FLORES
+                </h3>
+
+                <p>
+                    Agrega y administra las flores
+                    de nuestra florería.
+                </p>
+
+            </div>
+
+
+            <!-- TARJETA 3 -->
+            <div class="tarjeta-inicio tarjeta-morada">
+
+                <div class="icono-tarjeta">
+                    💐
+                </div>
+
+                <h3>
+                    ADMINISTRA TU<br>
+                    INVENTARIO
+                </h3>
+
+                <p>
+                    Consulta precios, colores
+                    y stock de nuestras flores.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTÓN -->
+        <a href="/flores" class="boton-registro">
+            🌸 &nbsp; IR AL REGISTRO &nbsp; →
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

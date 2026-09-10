@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Florería</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body class="bg-purple-50">
+    <header class="bg-pink-300 py-5 shadow-md">
+        <nav class="max-w-4xl mx-auto flex justify-center gap-8">
+            <a href="/" class="text-white font-semibold tracking-wide hover:text-pink-400">INICIO</a>
+            <a href="/flores" class="text-white font-semibold tracking-wide hover:text-pink-400">FLORES</a>
+        </nav>
+    </header>
+
+    <div class="max-w-2xl mx-auto mt-12 px-4">
+        {% block cuerpo %}
+        {% endblock %}
+    </div>
+</body>
+</html>
