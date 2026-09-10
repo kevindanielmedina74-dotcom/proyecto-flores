@@ -1,16 +1,20 @@
 import mysql.connector
+import os
 
 def conectar():
     try:
-        camino = mysql.connector.connect(host="127.0.0.1",
-                                        user="root",
-                                        password="123456789",
-                                        database="floristeria", 
-                                        port="3306")
-        if camino.is_connected():
-            print("Conexcion exitosa")
-            return camino
-    except mysql.connector.Error as er:
-        print("Error", er)
+        camino = mysql.connector.connect(
+            host=os.getenv("DB_HOST"),
+            user=os.getenv("DB_USER"),
+            password=os.getenv("DB_PASSWORD"),
+            database=os.getenv("DB_NAME"),
+            port=int(os.getenv("DB_PORT", "3306"))
+        )
 
-camino = conectar()
+        if camino.is_connected():
+            print("Conexion exitosa")
+            return camino
+
+    except mysql.connector.Error as er:
+        print("Error:", er)
+        return None
