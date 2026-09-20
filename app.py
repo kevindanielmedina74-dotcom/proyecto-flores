@@ -13,6 +13,7 @@ def flores():
 
 @app.route("/flores/guardar", methods=["POST"])
 def guardar():
+    id_flor = request.form["id"]
     nombre = request.form["nombre_flor"]
     color = request.form["color"]
     precio = request.form["precio"]
@@ -20,8 +21,8 @@ def guardar():
 
     con = conectar()
     cur = con.cursor()
-    consulta = "INSERT INTO flores (Nombre_flor, Color, Precio, Stock) VALUES (%s, %s, %s, %s)"
-    cur.execute(consulta, [nombre, color, precio, stock])
+    consulta = "INSERT INTO flores (Id, Nombre_flor, Color, Precio, Stock) VALUES (%s, %s, %s, %s, %s)"
+    cur.execute(consulta, [id_flor, nombre, color, precio, stock])
     con.commit()
     cur.close()
     con.close()
